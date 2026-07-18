@@ -1,0 +1,59 @@
+ex4:
+a good LCG produces samples that fill a square plot uniformly and show uniformity and independence from each other
+as well as no repeatable sequences
+Inverse-transform method turns uniform samples into a sample F^-1 from any distribution with an 
+invertible cumulative distribution function CDF as F
+If CDF cant be inverted, Acceptance-Rejection is the best alternative.
+Between 1- and 2D Histograms, one tests for uniformity of single samples whilst the 
+other tests for independence on top of the former, also being named a "failure mode" that it can detect.
+
+Common Random Numbers CRN: use same rng streams for the same purpose in each variant 
+(when comparing 2 systems e.g. 1 vs 2 cashiers)
+3 techniques to achieve desired distribution: Inverse transform (invertible CDF), Acceptance-rejection(not invertible CDF)
+,Composition
+Inverse transform example: given a CDF F(x), set F(X) = U and solve for X: U stands for a Uniform value
+Normal, Gamma, Beta do not have a CDF per se.
+For Acceptance-rejection , draw a rectangle around the target function F with the max height being max f(x)
+Throw darts uniformly at the rectangle and those that land under f, we keep.
+
+ex3:
+histogram bins good number sqrt(n)
+Distributions:
+DISCRETE  (counts, integer outcomes)
+├── Yes/no trial(s)
+│   ├── single trial               →  Bernoulli
+│   └── n fixed trials             →  Binomial
+├── Trials until success
+│   ├── until 1st success          →  Geometric
+│   └── until k-th success         →  Negative Binomial
+└── Count of events in an interval →  Poisson
+
+
+CONTINUOUS  (real-valued measurements)
+├── How is the value generated?
+│   ├── sum of small independent effects →  Normal
+│   └── product of many small effects →  Lognormal
+├── Waiting / service time
+│   ├── memoryless                    →  Exponential
+│   ├── with aging / wear-out         →  Weibull
+│   └── multi-stage (k stages)        →  Gamma / Erlang
+└── Bounded value
+    ├── min / mode / max known        →  Triangular
+    ├── flexible shape on [a, b]      →  Beta
+    └── range only, otherwise unknown →  Uniform
+
+Probability Mass Function PMF: probability for discrete outcome like X=10
+Probability Density Function PDF: probability of an interval describes the area beneath function
+
+For discrete tests Chi-square, we pit observed data against expected bin counts of histogramms. (alpha and beta later)
+For continuous data we use KS-test to compare empirical with theoretical CDF.
+Type 1 error is a false alarm; distribution fits but still reject it.
+Type 2 error is a missed misfit; distribution doesnt fit but accept it.
+P-value after such tests represents probability of a gap between candidate and data distributions
+under the test H0 assumption. Higher p indicates higher likelihood of compatibility
+For H0, we have alpha and beta. Alpha is the threshold if p < alpha. This is the type 1 error we accept.
+For KS-test: you look at the vertical difference between the functions. Lower gap = better fit
+
+ex5:
+confidence interval CI 95% = sample mean x~ +- "margin_of_error_Z" (for 95%: 1.96 : z is 0.975) * (deviation/sqrt(n))
+
