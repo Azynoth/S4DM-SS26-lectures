@@ -51,6 +51,7 @@ Type 1 error is a false alarm; distribution fits but still reject it.
 Type 2 error is a missed misfit; distribution doesnt fit but accept it.
 P-value after such tests represents probability of a gap between candidate and data distributions
 under the test H0 assumption. Higher p indicates higher likelihood of compatibility
+If p > alpha then you fail to reject H0, otherwise you reject H0 (aka you accept H1)
 For H0, we have alpha and beta. Alpha is the threshold if p < alpha. This is the type 1 error we accept.
 For KS-test: you look at the vertical difference between the functions. Lower gap = better fit
 
