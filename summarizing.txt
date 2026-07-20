@@ -57,4 +57,6 @@ For KS-test: you look at the vertical difference between the functions. Lower ga
 
 ex5:
 confidence interval CI 95% = sample mean x~ +- "margin_of_error_Z" (for 95%: 1.96 : z is 0.975) * (deviation/sqrt(n))
+Littles law: Avg customers in system = avg arrival rate(lambda) * avg waiting time in system
+
 
